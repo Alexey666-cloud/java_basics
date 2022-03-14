@@ -7,7 +7,7 @@ public class Hospital {
         //TODO: напишите метод генерации массива температур пациентов
         float[] patientsTemp = new float[patientsCount];
 
-        for (int i = 0; i < patientsCount; i++) {
+        for (int i = 0; i < patientsTemp.length; i++) {
             patientsTemp[i] = Math.round(((float) (Math.random() * 8) + 32) * 100) / (float) 100.0;
         }
         return patientsTemp;
@@ -43,7 +43,10 @@ public class Hospital {
 
 
         String report =
-                "Температуры пациентов: " + Arrays.toString(generatePatientsTemperatures(6)) +
+                "Температуры пациентов: " + Arrays.toString(generatePatientsTemperatures(6))
+                        .replace(",", "")
+                        .replace("[", "")
+                        .replace("]", "") +
                         "\nСредняя температура: " + result +
                         "\nКоличество здоровых: " + count;
 
