@@ -8,7 +8,7 @@ public class Hospital {
         float[] patientsTemp = new float[patientsCount];
 
         for (int i = 0; i < patientsTemp.length; i++) {
-            patientsTemp[i] = Math.round(((float) (Math.random() * 8) + 32) * 100) / (float) 100.0;
+            patientsTemp[i] = Math.round(((float) (Math.random() * 8) + 32) * 10) / (float) 10.0;
         }
         return patientsTemp;
     }
@@ -47,7 +47,8 @@ public class Hospital {
                         .replace(",", "")
                         .replace("[", "")
                         .replace("]", "") +
-                        "\nСредняя температура: " + result +
+                        "\nСредняя температура: " + result
+                        .replace(",", ".") +
                         "\nКоличество здоровых: " + count;
 
         return report;
