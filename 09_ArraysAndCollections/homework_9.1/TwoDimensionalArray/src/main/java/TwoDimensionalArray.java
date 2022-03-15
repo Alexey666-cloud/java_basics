@@ -9,6 +9,18 @@ public class TwoDimensionalArray {
         // [ , X,  ]
         // [X,  , X]
 
-        return new char[0][0];
+        char[][] array = new char[size][size];
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (i == j || i + j == (size - 1)) {
+                    array[i][j] = symbol;
+                } else {
+                    array[i][j] = ' ';
+                }
+            }
+        }
+
+        return array;
     }
 }
