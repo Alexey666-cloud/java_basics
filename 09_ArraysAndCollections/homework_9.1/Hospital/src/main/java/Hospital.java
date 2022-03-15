@@ -43,7 +43,7 @@ public class Hospital {
 
 
         String report =
-                "Температуры пациентов: " + Arrays.toString(generatePatientsTemperatures(6))
+                "Температуры пациентов: " + Arrays.toString(temperatureData)
                         .replace(",", "")
                         .replace("[", "")
                         .replace("]", "") +
