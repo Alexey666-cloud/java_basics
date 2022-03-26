@@ -23,12 +23,12 @@ public class TodoList {
     public void edit(String todo, int index) {
         // TODO: заменить дело на index переданным todo индекс,
         //  проверьте возможность изменения
-        if (!todo.isEmpty()) {
-            if (index >= 0 && index < todoList.size()) {
-                todoList.remove(index);
-                todoList.add(index, todo);
-            } else return;
-        }
+
+        if (index >= 0 && index < todoList.size()) {
+            todoList.remove(index);
+            todoList.add(index, todo);
+        } else return;
+
     }
 
     public void delete(int index) {
@@ -36,7 +36,8 @@ public class TodoList {
         //  проверьте возможность удаления дела
         if (index >= 0 && index < todoList.size()) {
             todoList.remove(index);
-        } else return;
+        }
+        else return;
     }
 
     public ArrayList<String> getTodos() {

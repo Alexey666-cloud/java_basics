@@ -32,6 +32,7 @@ public class Main {
             }
             
             if (command.equals("EDIT")) {
+                todo = inputStringArray[2];
                 todoList.edit(todo, Integer.parseInt(inputStringArray[1]));
                 System.out.println("Дело перезаписано!");
             }
