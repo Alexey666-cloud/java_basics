@@ -16,8 +16,7 @@ public class TodoList {
             if (index >= 0 && index < todoList.size()) {
                 todoList.add(index, todo);
             } else todoList.add(todo);
-        } else return;
-
+        }
     }
 
     public void edit(String todo, int index) {
@@ -27,8 +26,7 @@ public class TodoList {
         if (index >= 0 && index < todoList.size()) {
             todoList.remove(index);
             todoList.add(index, todo);
-        } else return;
-
+        }
     }
 
     public void delete(int index) {
@@ -37,7 +35,6 @@ public class TodoList {
         if (index >= 0 && index < todoList.size()) {
             todoList.remove(index);
         }
-        else return;
     }
 
     public ArrayList<String> getTodos() {
