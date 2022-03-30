@@ -19,8 +19,10 @@ public class PhoneBook {
     public String getContactByPhone(String phone) {
         // формат одного контакта "Имя - Телефон"
         // если контакт не найдены - вернуть пустую строку
-        if (phoneBook.containsValue(value)) {
-            return  phoneBook.get(key) + " - " + phone;
+        for (Map.Entry<String, String> entry : phoneBook.entrySet()) {
+            if (entry.getValue().equals(phone)) {
+                return entry.getKey() + " - " + entry.getValue();
+            }
         }
         return "";
     }
@@ -39,6 +41,11 @@ public class PhoneBook {
         // если контактов нет в телефонной книге - вернуть пустой TreeSet
         if (!phoneBook.containsKey(key) && !phoneBook.isEmpty()) {
             return new TreeSet<String>(Set.of(key + " - " + value));
+        }
+        if (phoneBook.size() > 3 && !phoneBook.containsKey(value) && !phoneBook.isEmpty()) {
+            for (Map.Entry<String, String> entry : phoneBook.entrySet()) {
+                return Collections.singleton(key + " - " + entry.getValue() + ", " + phoneBook.get(key));
+            }
         }
         return new TreeSet<>();
     }
