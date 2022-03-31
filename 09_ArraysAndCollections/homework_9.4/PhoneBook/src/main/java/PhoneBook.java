@@ -8,9 +8,15 @@ public class PhoneBook {
         // проверьте корректность формата имени и телефона (отдельные методы для проверки)
         // если такой номер уже есть в списке, то перезаписать имя абонента
 
+        for (Map.Entry<String, String> numb : phoneBook.entrySet()) {
+            if (phoneBook.containsValue(numb.getValue()) && name != phoneBook.get(name)) {
+                phoneBook.remove(name);
+            }
+        }
         if (!name.equals(phone) && !phone.equals(name)) {
             phoneBook.put(name, phone);
         }
+
     }
 
     public String getContactByPhone(String phone) {
